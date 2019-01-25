@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">NavigationDrawer</string>
-    <string name="gallery_str">Gallery</string>
-    <string name="slideshow_str">Slideshow</string>
+    <string name="str_articles">Articles</string>
+    <string name="str_songs">Songs</string>
     <string name="tools_str">Tools</string>
-    <string name="import_str">Import</string>
-    <string name="books_title">Books</string>
+    <string name="str_books">Books</string>
+    <string name="home_title">Home</string>
 </resources>

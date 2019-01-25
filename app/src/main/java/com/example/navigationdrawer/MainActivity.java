@@ -2,23 +2,19 @@ package com.example.navigationdrawer;
 
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
-import android.support.v4.app.Fragment;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.RadioGroup;
 
 
 public class MainActivity extends AppCompatActivity {
 
     private DrawerLayout mDrawerLayout;
-    private ContentFragment frg;
+    private ContentFragment contentFragment;
 
 
     @Override
@@ -35,8 +31,9 @@ public class MainActivity extends AppCompatActivity {
 
         mDrawerLayout = findViewById(R.id.drawer_layout);
 
-        frg = new ContentFragment();
-        getSupportFragmentManager().beginTransaction().add(R.id.content_holder,frg, "cnt_frg").commit();
+        //initialize content fragment
+        contentFragment = new ContentFragment();
+        getSupportFragmentManager().beginTransaction().add(R.id.content_holder, contentFragment, "content_fragment").commit();
 
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(
@@ -50,7 +47,16 @@ public class MainActivity extends AppCompatActivity {
 
                         // Add code here to update the UI based on the item selected
                         // For example, swap UI fragments here
+//                        contentFragment.changeView(R.layout.articles);
+                        switch(menuItem.getItemId()){
+                            case R.id.nav_articles:
+                                contentFragment.changeView(R.layout.articles);
+                                break;
+                            case R.id.nav_books:
+                                contentFragment.changeView(R.layout.books);
+                                break;
 
+                        }
                         return true;
                     }
                 });
@@ -65,16 +71,12 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onDrawerOpened(View drawerView) {
 
-                        System.out.println(frg.getmContainer());
-                        System.out.println(frg.getmInflater());
-//
-                        ViewGroup mContainer = frg.getmContainer();
-                        LayoutInflater mInflater= frg.getmInflater();
-                        ViewGroup ph = frg.getPlaceholder();
+
                         // Respond when the drawer is opened
-                        View newView = mInflater.inflate(R.layout.gallery, mContainer, false);
-                        ph.removeAllViews();
-                        ph.addView(newView);
+//                        View newView = mInflater.inflate(R.layout.articles, mContainer, false);
+//                        ph.removeAllViews();
+//                        ph.addView(newView);
+
                     }
 
                     @Override
@@ -89,7 +91,6 @@ public class MainActivity extends AppCompatActivity {
                 }
         );
     }
-
 
 
     @Override

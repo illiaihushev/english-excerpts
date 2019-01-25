@@ -1,6 +1,7 @@
 package com.example.navigationdrawer;
 
 import android.os.Bundle;
+import android.support.annotation.LayoutRes;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -17,7 +18,6 @@ public class ContentFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        System.out.println("here");
         mInflater = inflater;
         mContainer = container;
 
@@ -28,15 +28,9 @@ public class ContentFragment extends Fragment {
         return placeholder;
     }
 
-    public LayoutInflater getmInflater() {
-        return mInflater;
-    }
-
-    public ViewGroup getmContainer() {
-        return mContainer;
-    }
-
-    public ViewGroup getPlaceholder() {
-        return placeholder;
+    public void changeView(@LayoutRes int resource){
+        View newView = mInflater.inflate(resource, mContainer, false);
+        placeholder.removeAllViews();
+        placeholder.addView(newView);
     }
 }

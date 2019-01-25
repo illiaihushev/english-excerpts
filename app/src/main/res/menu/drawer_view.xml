@@ -2,16 +2,14 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android" >
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_camera"
-            android:title="@string/import_str" />
+            android:id="@+id/nav_books"
+            android:title="@string/str_books" />
         <item
-            android:id="@+id/nav_gallery"
-            android:title="@string/gallery_str" />
+            android:id="@+id/nav_articles"
+            android:title="@string/str_articles" />
         <item
-            android:id="@+id/nav_slideshow"
-            android:title="@string/slideshow_str" />
-        <item
-            android:id="@+id/nav_manage"
-            android:title="@string/tools_str" />
+            android:id="@+id/nav_songs"
+            android:title="@string/str_songs" />
+
     </group>
 </menu>
