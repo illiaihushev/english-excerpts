@@ -5,4 +5,6 @@
     <string name="tools_str">Tools</string>
     <string name="str_books">Books</string>
     <string name="home_title">Home</string>
+    <string name="new_book">New book</string>
+    <string name="str_author">author</string>
 </resources>
