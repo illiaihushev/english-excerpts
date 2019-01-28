@@ -1,10 +1,12 @@
 <resources>
-    <string name="app_name">NavigationDrawer</string>
+    <string name="app_name">EnglishExcerpts</string>
     <string name="str_articles">Articles</string>
     <string name="str_songs">Songs</string>
     <string name="tools_str">Tools</string>
     <string name="str_books">Books</string>
     <string name="home_title">Home</string>
     <string name="new_book">New book</string>
-    <string name="str_author">author</string>
+    <string name="str_author">Author</string>
+    <string name="str_title">Title</string>
+    <string name="str_save">Save</string>
 </resources>

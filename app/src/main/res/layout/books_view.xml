@@ -1,20 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <data>
+        <variable
+            name="book"
+            type="com.example.englishexcerpts.model.Book" />
 
-    <TextView
-        android:id="@+id/txt_books"
+    </data>
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/str_books" />
+        android:layout_height="match_parent"
 
-    <Button
-        android:id="@+id/btn_new_book"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/new_book"/>
 
-</LinearLayout>
+        android:orientation="vertical">
+
+
+        <TextView
+            android:id="@+id/txt_books"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/str_books" />
+        <TextView
+            android:id="@+id/books_txtv_author"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{book.title}" />
+
+        <Button
+            android:id="@+id/btn_new_book"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/new_book" />
+
+
+
+    </LinearLayout>
+
+</layout>
